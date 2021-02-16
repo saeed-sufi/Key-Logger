@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, dialog } = require("electron");
+const { app, BrowserWindow, ipcMain, dialog, Menu } = require("electron");
 fs = require("fs");
 let mainWindow;
 
@@ -46,4 +46,23 @@ function createWindow() {
       }
     });
   });
+
+  const mainMenu = Menu.buildFromTemplate(menuTemplate)
+  Menu.setApplicationMenu(mainMenu)
+
 }
+
+const menuTemplate = [
+  {
+    label: "File",
+    submenu: [
+      {
+        label: "Quit",
+        accelerator: "Ctrl + Q",
+        click() {
+          app.quit();
+        },
+      },
+    ],
+  },
+];
