@@ -6,6 +6,9 @@ app.on("ready", createWindow);
 
 function createWindow() {
   mainWindow = new BrowserWindow({
+    width: 500,
+    height: 700,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
