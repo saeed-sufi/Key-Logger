@@ -105,8 +105,9 @@ function removeFromLocalStorage(id) {
 }
 
 save.addEventListener("click", () => {
+
   const saveOptions = {
-    defaultPath: app.getPath("documents"),
+    defaultPath: app.getPath("userData"),
     filters: [{ name: "Text File", extensions: ["txt"] }],
   };
   if (getLocalStorage().length) {
@@ -140,10 +141,9 @@ ipcRenderer.on("save:fail", (e, err) => {
 });
 
 ipcRenderer.on("app:close", () => {
-  let isSaved = true
+  let isSaved = true;
   if (getLocalStorage().length != 0) {
-    isSaved = false
+    isSaved = false;
   }
-  ipcRenderer.send('comments:save', isSaved)
-})
-
+  ipcRenderer.send("comments:save", isSaved);
+});
