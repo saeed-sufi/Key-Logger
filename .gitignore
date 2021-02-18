@@ -10,6 +10,7 @@
 *~
 *.sass-cache
 node_modules/
+Key Logger-win32-x64/
 .tmp/
 
 # OS or Editor folders

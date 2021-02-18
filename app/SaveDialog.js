@@ -17,7 +17,6 @@ class SaveDialog {
     dialog.showMessageBox(this.window, options).then((res) => {
       if (res.response == 0) {
         this.window.destroy();
-        this.window = null;
       } else {
         console.log(res);
       }

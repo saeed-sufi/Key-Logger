@@ -146,3 +146,4 @@ ipcRenderer.on("app:close", () => {
   }
   ipcRenderer.send('comments:save', isSaved)
 })
+

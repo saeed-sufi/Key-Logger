@@ -3,13 +3,16 @@ const { app, ipcMain } = require("electron");
 const Window = require("./app/Window");
 const Menu = require("./app/Menu");
 const SaveDialog = require("./app/SaveDialog");
-
 fs = require("fs");
 let mainWindow;
 
 app.on("ready", () => {
   mainWindow = new Window(`file://${__dirname}/src/index.html`, 500, 700);
   closingWindow(mainWindow);
+
+  mainWindow.on("closed", () => {
+    mainWindow = null;
+  });
 });
 
 function closingWindow(mainWindow) {
@@ -51,4 +54,21 @@ const mainMenuTemplate = [
   },
 ];
 
+if (process.env.NODE_ENV == "dev") {
+  mainMenuTemplate.push({
+    label: "View",
+    submenu: [
+      {
+        role: "reload",
+      },
+      {
+        label: "Toggle DevTools",
+        accelerator: "Ctrl + Shift + I",
+        click() {
+          mainWindow.toggleDevTools();
+        },
+      },
+    ],
+  });
+}
 const mainMenu = new Menu(mainMenuTemplate);
