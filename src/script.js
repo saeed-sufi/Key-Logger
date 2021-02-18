@@ -109,7 +109,6 @@ save.addEventListener("click", () => {
     defaultPath: app.getPath("documents"),
     filters: [{ name: "Text File", extensions: ["txt"] }],
   };
-
   if (getLocalStorage().length) {
     dialog.showSaveDialog(saveOptions).then((response) => {
       if (!response.canceled) {
@@ -129,7 +128,7 @@ save.addEventListener("click", () => {
   }
 });
 
-// if saving the comments on local fs is successful, delete the local storage
+// if saving the comments on local fs is successful, delete local storage "comments" key.
 ipcRenderer.on("save:success", () => {
   list.textContent = "";
   localStorage.removeItem("comments");

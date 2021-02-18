@@ -1,10 +1,12 @@
 {
   "name": "keylogger",
+  "productName": "Key Logger",
   "version": "1.0.0",
   "description": "This application logs any key that the user press on the keyboard.",
   "main": "index.js",
   "scripts": {
-    "app": "electron ."
+    "app": "electron .",
+    "build": "electron-packager . --icon=keylogger.ico --overwrite --asar=true --platform=win32 --prune=true"
   },
   "keywords": [
     "keyboard",
@@ -12,8 +14,9 @@
   ],
   "author": "Saeed-Sufi <Sufi.geo@gmail.com>",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "electron": "^11.2.3",
-    "fluent-ffmpeg": "^2.1.2"
+    "electron-packager": "^15.2.0"
   }
 }
