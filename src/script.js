@@ -107,7 +107,7 @@ function removeFromLocalStorage(id) {
 save.addEventListener("click", () => {
 
   const saveOptions = {
-    defaultPath: app.getPath("userData"),
+    defaultPath: app.getPath("documents"),
     filters: [{ name: "Text File", extensions: ["txt"] }],
   };
   if (getLocalStorage().length) {

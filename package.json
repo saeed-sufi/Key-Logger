@@ -16,7 +16,9 @@
   ],
   "author": "Saeed-Sufi <Sufi.geo@gmail.com>",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
   "devDependencies": {
     "bcrypt": "^5.0.0",
     "electron": "^11.2.3",

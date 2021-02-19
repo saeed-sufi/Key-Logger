@@ -5,7 +5,9 @@ class Window extends BrowserWindow {
     super({
       width: width,
       height: height,
-      resizable: false,
+      minHeight: 400,
+      minWidth: 400,
+      maximizable: false,
       backgroundColor: '#f1f5f8',
       webPreferences: {
         nodeIntegration: true,

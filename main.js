@@ -1,5 +1,5 @@
-const { debug } = require("console");
 const { app, ipcMain } = require("electron");
+const windowStateKeeper = require("electron-window-state");
 const Window = require("./app/Window");
 const Menu = require("./app/Menu");
 const SaveDialog = require("./app/SaveDialog");
@@ -7,7 +7,19 @@ fs = require("fs");
 let mainWindow;
 
 app.on("ready", () => {
-  mainWindow = new Window(`./src/index.html`, 500, 700);
+  let mainWindowState = windowStateKeeper({
+    defaultWidth: 500,
+    defaultHeight: 700,
+  });
+
+  mainWindow = new Window(
+    `./src/index.html`,
+    mainWindowState.width,
+    mainWindowState.height
+  );
+  mainWindow.setPosition(900, 10)
+  mainWindowState.manage(mainWindow);
+
   closingWindow(mainWindow);
 
   mainWindow.on("closed", () => {
@@ -72,3 +84,4 @@ if (process.env.NODE_ENV == "dev") {
   });
 }
 const mainMenu = new Menu(mainMenuTemplate);
+
