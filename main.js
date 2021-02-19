@@ -7,7 +7,7 @@ fs = require("fs");
 let mainWindow;
 
 app.on("ready", () => {
-  mainWindow = new Window(`file://${__dirname}/src/index.html`, 500, 700);
+  mainWindow = new Window(`./src/index.html`, 500, 700);
   closingWindow(mainWindow);
 
   mainWindow.on("closed", () => {

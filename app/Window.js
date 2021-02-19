@@ -6,6 +6,7 @@ class Window extends BrowserWindow {
       width: width,
       height: height,
       resizable: false,
+      backgroundColor: '#f1f5f8',
       webPreferences: {
         nodeIntegration: true,
         enableRemoteModule: true,
@@ -13,7 +14,7 @@ class Window extends BrowserWindow {
       },
     });
 
-    this.loadURL(filePath)
+    this.loadFile(filePath)
   }
 }
 
