@@ -7,7 +7,7 @@
   "scripts": {
     "app": "set NODE_ENV=dev&& electron .",
     "watch": "nodemon --exec electron .",
-    "postinstall": "electron-rebuildi",
+    "postinstall": "electron-rebuild",
     "build": "electron-packager . --icon=keylogger.ico --overwrite --asar --platform=win32 --prune=true"
   },
   "keywords": [
