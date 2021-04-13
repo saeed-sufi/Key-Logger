@@ -14,7 +14,7 @@ commentInput.addEventListener("keyup", addComment);
 
 function addComment(e) {
   // the condition checks if the pressed key is an alphabetical letter.
-  if (e.code.substring(0, 3) == "Key") {
+  if (e.code.substring(0, 3) == "Key" || e.code.substring(0,5) == "Digit" || (e.code.substring(0,6) == "Numpad" && e.code.length == 7 )) {
     const comment = commentInput.value;
     const element = document.createElement("article");
     element.classList.add("comment-item");
