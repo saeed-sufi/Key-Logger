@@ -34,7 +34,7 @@ function closingWindow(mainWindow) {
     mainWindow.webContents.send("app:close");
     ipcMain.on("comments:save", (e, isSaved) => {
       if (!isSaved) {
-        const saveDialog = new SaveDialog(mainWindow);
+         new SaveDialog(mainWindow);
       } else {
         mainWindow.destroy();
       }

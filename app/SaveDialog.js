@@ -18,7 +18,7 @@ class SaveDialog {
       if (res.response == 0) {
         this.window.destroy();
       } else {
-        // console.log(res);
+        // do nothing
       }
     });
   }

@@ -21,6 +21,7 @@ function addComment(e) {
   ) {
     const comment = commentInput.value.substring(0, 1)
     if (comment.length < 1) return
+
     const element = document.createElement("article")
     element.classList.add("comment-item")
     const date = new Date()
